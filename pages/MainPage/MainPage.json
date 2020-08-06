@@ -1,0 +1,11 @@
+{
+	"navigationBarTitleText": "Save our Team",
+	"enablePullDownRefresh": true,
+	"usingComponents": {
+		"mp-cells": "../components/cells/cells",
+		"mp-cell": "../components/cell/cell",
+		"mp-badge": "../components/badge/badge",
+		"mp-searchbar": "../components/searchbar/searchbar",
+		"Select": "../components/select/select"
+	}
+}

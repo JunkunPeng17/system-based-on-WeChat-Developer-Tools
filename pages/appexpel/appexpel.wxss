@@ -1,0 +1,32 @@
+/* pages/messagebox/messagebox.wxss */
+page{
+   height: 100%;
+}
+
+.messagebox-container{
+  background-color: rgb(248, 248, 248);
+  margin: 10rpx;
+  height: 100%;
+}
+
+.onebutton{
+  margin: 10rpx;
+  background-color: white;
+}
+
+/*分割线样式*/
+.divLine{
+ background: rgb(114, 114, 114);
+ width: 100%;
+ height: 2rpx;
+ margin: 5rpx;
+}
+
+.boxtitle{
+  font-size: 29px;
+  margin: 2rpx;
+}
+
+.onemessage{
+  margin: 30rpx;
+}

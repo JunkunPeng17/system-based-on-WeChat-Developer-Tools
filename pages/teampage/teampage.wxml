@@ -1,0 +1,99 @@
+<!--pages/teampage/teampage.wxml-->
+<!--队伍信息-->
+<view class="bacg">
+
+<view class="top">teampage</view>
+
+<view class="tl">
+  <view class="changeline">
+    <view class="td t1">
+    {{projectName}}
+    </view>
+    <view class="border" >
+      <view class="td t2">
+      {{teamName}}
+      </view>
+      <view class="td t2">
+      {{tags}}
+      </view>
+      <view class="td t3">
+      {{ddl}}
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--成员列表-->
+  <view class="tl">
+    <mp-cells ext-class="head" title="Team Member(s)" footer="Hint: Slide to see more members.">
+    <view class="border">
+    <scroll-view scroll-y="true" style="height: 170px">
+      <mp-cell link hover ext-class="tr bg-g" value="{{leadername}} (Leader)" footer="..."> </mp-cell>
+      <block wx:for="{{teamMembername}}" wx:key="index">
+        <mp-cell link hover ext-class="td bg-w" value="{{item}}" footer="..."></mp-cell>
+      </block>
+    </scroll-view>
+    </view>
+    </mp-cells>
+  </view>
+
+<!--展示图片-->
+<view wx:if="{{imgUrl.length!=0}}">
+<swiper class='swiperClass' autoplay indicator-color="#a39f99" indicator-active-color="#f49641" indicator-dots  interval="2000" duration="1000" previous-margin="30px" next-margin="30px" circular bindchange="bindchange" style='height: {{swiperHeight}}px'>
+    <block wx:for="{{imgUrl}}">
+    <swiper-item>
+    <image mode="aspectFill" src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : 'quiet'}}" bindload='imgH'>
+    </image>
+    </swiper-item>
+    </block>
+</swiper>
+</view>
+
+<!--队伍介绍-->
+  <view class="weui-cells__title headI">Introduction</view>
+  <view class="weui-cell borderI" 
+  style="background: rgba(255, 255, 255, 0.705)">
+    <scroll-view scroll-y="true" style="height: 260px">
+      <text class="weui-textarea intro">
+        {{teamIntro}}
+      </text>
+    </scroll-view>
+  </view>
+
+<button class="weui-btn buttonS" type="primary" bindtap='navigateToQA'>
+    <view>Q & A</view>
+</button>
+ <!-- team square button -->
+<block wx:if="{{role==0}}">
+<button wx:if ="{{buttonClicked}}" class="weui-btn buttonS" type="default" bindtap='checkapply' disabled="true">
+    <view>You have applied this team</view>
+</button>
+<button wx:elif ="{{memberCheck==true}}" class="weui-btn buttonS" type="default" disabled="true">
+    <view>You are already in this team</view>
+</button>
+<button wx:elif ="{{isFull==true}}" class="weui-btn buttonS" type="default" disabled="true">
+    <view>This team is full</view>
+</button>
+<button wx:else class="weui-btn buttonS" type="primary"  bindtap="{{!buttonClicked?'apply':''}}">
+    <view>Apply To Join</view>
+</button>
+
+</block>
+<block wx:elif="{{role==1}}">
+<!-- leader button -->
+<button class="weui-btn buttonS" type="primary" bindtap="update">
+    <view>Update team Information</view>
+</button>
+
+<button class="weui-btn buttonS" type="primary" bindtap='dismissTeam'>
+    <view>Dismiss team</view>
+</button>
+</block>
+<block wx:elif="{{role==2}}">
+ <!-- member button -->
+<button class="weui-btn buttonS" type="primary" bindtap='quitTeam'>
+    <view>Quit the team</view>
+</button>
+</block>
+
+</view>

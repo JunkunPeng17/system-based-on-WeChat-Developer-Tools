@@ -1,0 +1,22 @@
+<!--pages/messagebox/messagebox.wxml-->
+<view class="messagebox-container">
+  <view class="boxtitle">Message Box</view>
+       <!-- 分割线 -->
+  <view class="divLine"></view>
+<!-- 有消息 -->
+<block wx:if="{{messageNum == 0}}">
+<view style="font-size: 25px;color: #888888; ">No Messages</view>
+</block>
+<!-- 无消息 -->
+<block wx:elif="{{messageNum >0}}">
+<mp-cells  wx:for="{{messages}}" wx:for-index="index" wx:for-item="message" ext-class="onemessage">
+  <mp-cell link >
+    <view>联系人名称</view>
+    <view style="font-size: 13px;color: #888888; ">{{message.content}}</view>
+    <view slot="footer">
+      <mp-badge style="margin-right:10rpx;" content="New" />
+    </view>
+  </mp-cell>
+</mp-cells>
+</block>
+</view>

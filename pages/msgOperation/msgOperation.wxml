@@ -1,0 +1,23 @@
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view  class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__bd">
+        <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+            <mp-cells title="Message" >
+                <mp-cell value="projectname" footer="{{pname}}" ext-class=""></mp-cell>
+                <mp-cell value="applytime" footer="{{applytime}}" ext-class=""></mp-cell>
+                <mp-cell value="gender" footer="{{gender}}"ext-class=""></mp-cell>
+                <mp-cell value="grade" footer="{{grade}}"ext-class=""></mp-cell>
+                <mp-cell value="major"  footer="{{major}}" ext-class=""></mp-cell>
+                <mp-cell value="nickname" footer="{{nickname}}" ext-class=""></mp-cell>
+            </mp-cells>  
+        </mp-form>  
+        <view wx:if="{{num<num_set}}"class="weui-btn-area">
+            <button class="weui-btn" type="primary"bindtap="getMateID" >Approve</button>
+            <button class="weui-btn" type="warn" bindtap="delApplication">Reject</button>
+        </view>
+        <view wx:else class="weui-btn-area">
+            <button class="weui-btn" type="primary" disabled="true" plain="true">Your Team is full</button>
+            <button class="weui-btn" type="warn" bindtap="delApplication">Reject</button>
+        </view>
+    </view>
+</view>

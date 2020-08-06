@@ -1,0 +1,24 @@
+<view class="msg-box">
+	<!--留言-->
+	<view class="send-box">
+		<input bindinput="changeInputVal" class="input" type="text" value="{{inputVal}}" placeholder="Please comment..."/>
+		<button size="mini" type="primary" bindtap="addMsg">Add</button>
+	</view>
+	<text class="msg-inform" wx:if="{{comment.length==0}}">No message...</text>
+	<!--留言列表-->
+	<view class="list-view">
+			<view class="item" bindtap="navigateToReply" wx:for="{{comment}}" wx:key="{{index}}" data-index="{{index}}">
+				<view class="info">
+					<image class="profile" src="{{item.avatar}}"></image>
+					<view class="nickname">{{item.nickname}}</view>
+				</view>
+				<view class="text1" wx:if="{{comment.length!=0}}">
+					{{item.comment}}
+				</view>
+			</view>
+
+			
+
+	</view>
+	
+</view>

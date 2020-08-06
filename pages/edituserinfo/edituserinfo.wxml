@@ -1,0 +1,28 @@
+<!-- 修改数据 -->
+<view class="formBody">
+  <mp-form id="form">
+    <mp-cells title="Edit" footer="">
+      <mp-cell prop="nickname" title="Nickname" ext-class="">
+        <input bindinput="updNickname" class="weui-input" placeholder="{{nickname}}" />
+      </mp-cell>
+      <mp-cell prop="gender" link title="Gender">
+        <picker bindchange="bindGenderChange" value="{{genderIndex}}" range="{{genders}}">
+          <view class = "genderText">{{genders[genderIndex]}}</view>
+        </picker>
+      </mp-cell>
+      <mp-cell prop="grade" title="Grade" ext-class="">
+        <input bindinput="updGrade" class="weui-input" placeholder="{{grade}}" />
+      </mp-cell>
+      <mp-cell prop="major" title="Major" ext-class="">
+        <input bindinput="updMajor" class="weui-input" placeholder="{{major}}" />
+      </mp-cell>
+      <mp-cell prop="WeChat ID" title="WeChat ID" ext-class="">
+        <input bindinput="updAddress" class="weui-input" placeholder="{{address}}" />
+      </mp-cell>
+
+    </mp-cells>
+
+
+  </mp-form>
+</view>
+<button type="primary" bindtap="updData">Save</button>

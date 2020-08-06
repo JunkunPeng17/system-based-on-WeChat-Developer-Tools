@@ -1,0 +1,47 @@
+<!--pages/messagebox/messagebox.wxml-->
+<view class="messagebox-container">
+  <view class="weui-flex">
+    <view class="weui-flex__item">
+      <button id="all" class="onebutton" bindtap="changeButton" style="background-color: {{buttonColor[0]}}">All</button>
+    </view>
+    <view class="weui-flex__item">
+      <button id="applications" class="onebutton" bindtap="changeButton" style="background-color: {{buttonColor[1]}}">Applications</button>
+    </view>
+    <view class="weui-flex__item">
+      <button id="expelling" class="onebutton" bindtap="changeButton" style="background-color: {{buttonColor[2]}}">Expelling</button>
+    </view>
+  </view>
+
+  <!-- <view class="boxtitle">Applications | Expelling</view> -->
+  <!-- 分割线 -->
+  <view class="divLine"></view>
+  <!-- 有消息 -->
+  <block wx:if="{{messageNum == 0}}">
+    <view style="font-size: 25px;color: #888888; ">No Messages</view>
+  </block>
+  <!-- 无消息 -->
+  <block wx:elif="{{messageNum >0}}">
+    <mp-cells wx:for="{{messages}}" wx:for-index="index" wx:for-item="message" wx:key="id" ext-class="onemessage">
+      <view wx:if="{{message.type == 'application'}}">
+        <mp-cell url="/pages/msgOperation/msgOperation?id={{message._id}}" bindtap="updateToRead" data-msgid = "{{message._id}}" data-databasename = "applications" link hover>
+          <view>Application ({{message.projectName}})</view>
+          <view style="font-size: 13px;color: #888888; ">{{message.applytime}}</view>
+          <view slot="footer">
+            <block wx:if="{{message.toRead}}">
+            <mp-badge style="margin-right:10rpx;" content="New" />
+            </block>
+          </view>
+        </mp-cell>
+      </view>
+      <view wx:elif="{{message.type == 'expelling'}}">
+        <mp-cell link>
+          <view>Expelling</view>
+          <view style="font-size: 13px;color: #888888; ">{{message.applytime}}</view>
+          <view slot="footer">
+            <mp-badge style="margin-right:10rpx;" content="New" />
+          </view>
+        </mp-cell>
+      </view>
+    </mp-cells>
+  </block>
+</view>

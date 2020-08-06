@@ -1,0 +1,66 @@
+<!--pages/teamInfo/teamInfo.wxml-->
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="page" class="main" xmlns:wx="http://www.w3.org/1999/xhtml">
+
+  <view class="page__bd" >
+    <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+
+
+      <mp-cells title="Basic Info" footer="" ext-class="main-info" >
+        <mp-cell prop="TeamName" title="TeamName" ext-class="" style="font-size:medium">
+          <input bindinput="changeTeamName" class="weui-input" placeholder="Input Team Name" maxlength="24"/>
+        </mp-cell>
+
+        <mp-cell prop="ProjectName" title="Project" ext-class="" style="font-size:medium">
+          <input bindinput="changeProjectName" class="weui-input" placeholder="Input Project Name" maxlength="24"/>
+        </mp-cell>
+
+        <mp-cell prop="date" title="Deadline" ext-class="" style="font-size:medium">
+          <picker data-field="date" mode="date" value="{{date}}" start="{{start}}" end="{{end}}" bindchange="changeDate">
+            <view class="weui-input">{{date}}</view>
+          </picker>
+        </mp-cell>
+      </mp-cells>
+
+      <mp-cells title="Number of Teammates" ext-class="main-info">
+        <mp-cell prop="numOfTM" title="Number" ext-class="" style="font-size:medium">
+          <picker value="{{numOfTMindex}}" range="{{numRange}}" class="weui-input" bindchange="changeNumOfTM">
+            {{numRange[numOfTMindex]}}
+          </picker>
+        </mp-cell>
+      </mp-cells>
+
+      <mp-cells ext-class="main-info" title="Introduction">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <textarea class="weui-textarea" placeholder="Input Introduction of Your Team" style="height: 3.3em" bindinput="changeIntro" maxlength="2000"/>
+              <mp-uploader bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="4" title="Picture" binddelete="deleteImg"></mp-uploader>
+            </view>
+          </view>
+        </view>
+      </mp-cells>
+
+      <mp-cells title="Tags (Click + to add, at most 5)" ext-class="main-info">
+        <mp-cell prop="tags" title="Tag" ext-class="" style="width:80%; float:left">
+          <input bindinput="changeOneTag" class="weui-input" placeholder="Input Tag" maxlength="20" value="{{oneTag}}" />
+        </mp-cell>
+        <button style="width:20%;color:green;background:none;border:none" bindtap="addTag">+</button>
+      </mp-cells>
+    </mp-form>
+    <view wx:for="{{tags}}" wx:key="index" style="width:70%">
+      <view style="margin-top:10px" style="width:100%" class="display-tag">
+        <view class="tag-item">{{item}}</view>
+        <button bindtap="deleteTag" data-index="{{index}}" style="color:red;background:none;border:none;">-</button>
+      </view>
+    </view>
+
+
+
+
+
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="submit" disabled="{{(teamName==''||projectName==''||introduction==''||tags.length==0)}}">Submit</button>
+    </view>
+  </view>
+</view>

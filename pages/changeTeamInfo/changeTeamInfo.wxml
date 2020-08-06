@@ -1,0 +1,31 @@
+<!--pages/changeTeamInfo/changeTeamInfo.wxml-->
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
+<view class="page" class="main" xmlns:wx="http://www.w3.org/1999/xhtml">
+
+  <view class="page__bd">
+    <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+
+
+
+
+      <mp-cells ext-class="main-info" title="Introduction">
+
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <textarea class="weui-textarea" placeholder="Input Introduction of Your Team" style="height: 3.3em" bindinput="changeIntro" value="{{introduction}}" />
+              <mp-uploader wx:if="{{load==true}}" bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="4" title="Picture" binddelete="deleteImg"></mp-uploader>
+            </view>
+          </view>
+        </view>
+      </mp-cells>
+
+
+
+
+    </mp-form>
+    <view class="weui-btn-area">
+      <button class="weui-btn" type="primary" bindtap="update">Update</button>
+    </view>
+  </view>
+</view>

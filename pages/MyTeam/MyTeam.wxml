@@ -1,0 +1,116 @@
+<!--index.wxml-->
+<!-- <input placeholder="Add name" bindinput="addName"></input>
+<input placeholder="Add age" bindinput="addAge"></input>
+<button bindtap="addData" type="primary">Add element</button>
+<button bindtap="getData" type="primary">Search element</button>
+<input placeholder="Please fill the id required to be deleted" bindinput="delDataInput"></input>
+<button bindtap="delData" type="primary">Delete element</button>
+<button bindtap="shujuku">数据库API获取数据</button>
+<button bindtap="yunhanshu">云函数获取数据</button>
+<text bindtap="print"></text> -->
+<!--index.wxml-->
+      <!-- <view class="tit">
+        <text>I am the captain</text>
+      </view> -->
+      <view class="box">
+			<!-- <block wx:if="{{!hasUserInfo && canIUse}}">
+    		<button open-type="getUserInfo" style="width:50%" bindgetuserinfo="getUserInfo" type="primary"> Log in </button>
+  		</block> -->
+			<block wx:if="{{hasUserInfo && canIUse}}">
+        <scroll-view scroll-y="true" style="height: 100%;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+          <view id="demo1" class="scroll-view-item demo-text-1">
+						<block wx:for="{{datalist}}" data-item="item" wx:for-index="idx">
+  						<view>  
+								<view wx:if="{{openid == item._openid}}">
+									<view>
+										<block>
+											<mp-cells bindtap="selfS" ext-class="onemessage" data-text="{{item._id}}">
+												<view>
+													<mp-cell link class="cell" ext-class = "tst">
+														<image slot="icon" src="icon.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+                            <view class="left">
+															<view class="ProjectName">
+																{{item.projectName}}
+															</view>
+															<view class="DDL">
+																Deadline {{item.deadline}}
+															</view>
+															<view class="Tag">
+																Tags: {{item.tags}}
+															</view>
+														</view>
+														<view slot="footer" wx:if="{{item.numOfTM==-1}}">
+															<view class=".numOfTM">{{item.currentNum}}/∞</view>
+															<!-- <mp-badge style="margin-right:10rpx;" content="{{item.currentNum}}/∞" /> -->
+														</view>
+														<view slot="footer" wx:else>
+															<view class=".numOfTM">{{item.currentNum}}/{{item.numOfTM}}</view>
+															<!-- <mp-badge style="margin-right:10rpx;" content="{{item.currentNum}}/{{item.numOfTM}}" /> -->
+														</view>
+													</mp-cell>
+												</view>
+											</mp-cells>
+										</block>
+									</view>
+						</view>
+					</view>
+					</block>
+
+					<block wx:for="{{datalist}}" wx:key="_openid">
+						<view wx:for="{{item.teamMateID}}" wx:for-item="teamMateID">
+						<view wx:if="{{openid == teamMateID}}">
+									<view>
+										<block>
+											<mp-cells bindtap="selfT" ext-class="onemessage" data-text="{{item._id}}">
+												<view>
+													<mp-cell link class="cell" ext-class = "tst">
+														<view class="left1">
+															<view class="ProjectName">
+																{{item.projectName}}
+															</view>
+															<view class="DDL">
+																Deadline {{item.deadline}}
+															</view>
+															<view class="Tag">
+																Tags: {{item.tags}}
+															</view>
+														</view>
+														<view slot="footer" wx:if="{{item.numOfTM==-1}}">
+															<view class=".numOfTM">{{item.currentNum}}/∞</view>
+															<!-- <mp-badge style="margin-right:10rpx;" content="{{item.currentNum}}/∞" /> -->
+														</view>
+														<view slot="footer" wx:else>
+															<view class=".numOfTM">{{item.currentNum}}/{{item.numOfTM}}</view>
+															<!-- <mp-badge style="margin-right:10rpx;" content="{{item.currentNum}}/{{item.numOfTM}}" /> -->
+														</view>
+													</mp-cell>
+												</view>
+											</mp-cells>
+										</block>
+									</view>
+						</view>
+					</view>
+				</block>
+				<view class="loading" hidden="{{!SearchLoading}}">Loading More...</view>  
+										<view class="loading" hidden="{{!SearchLoadingComplete}}">No More...</view>
+					</view>            
+          <view id="demo2"  class="scroll-view-item demo-text-2"></view>
+          <view id="demo3" class="scroll-view-item demo-text-3"></view>
+        </scroll-view>
+			</block>
+    </view>
+		<!-- <block wx:if="{{!hasUserInfo && canIUse}}">
+    		<button open-type="getUserInfo" style="width:50%" bindgetuserinfo="getUserInfo" type="primary"> Log in </button>
+  	</block> -->
+		<block wx:if="{{hasUserInfo && canIUse}}">
+      <navigator url="../teamInfo/teamInfo" open-type="navigate" class="navigate-hover">
+      	<button style="width: 88%" type="primary">Create a team</button>
+      </navigator>
+		</block>
+			<view class="itemmainwhite"  bindtap="onclick" wx:if="{{item.temp==0}}" data-text="{{item.index}}">{{item.index}}
+   		</view>
+	 
+	
+
+
+

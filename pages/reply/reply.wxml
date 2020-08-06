@@ -1,0 +1,41 @@
+<!--pages/reply/reply.wxml-->
+<view class="comment">
+	<view class="info">
+		<image class="profile" src="{{comment.avatar}}"></image>
+		<view class="nickname">{{comment.nickname}}</view>
+		<mp-icon class="delete" icon="delete" color="black" size="{{20}}" wx:if="{{OPEN_ID==comment.id}}" bindtap="delMsg"></mp-icon>
+	</view>
+	<view class="text1">
+		{{comment.comment}}
+	</view>
+</view>
+<!-- interval -->
+<view class="interval">
+	<mp-icon class="message" icon="comment" color="green" size="{{25}}" type="outline"></mp-icon>
+	<view class="count">All replies({{length}})</view>
+</view>
+<!-- reply -->
+<view class="reply" wx:for="{{reply_one}}" wx:key="{{index}}" data-index="{{index}}" bindtap="openActionSheetComment">
+	<view class="replyinfo">
+		<image class="replyprofile" src="{{item.avatar}}"></image>
+					<view class="replynickname">{{item.nickname}}</view>
+	</view>
+	<view class="text2" wx:if="{{item.reply_reply==false}}">
+		{{item.reply}}
+	</view>
+	<view class="text2" wx:if="{{item.reply_reply==true}}">
+		Reply to {{item.nickname}} : {{item.reply}}
+	</view>
+</view>
+<!-- bottom -->
+<view>
+	<button class="replybutton" bindtap="reply" wx:if="{{!showInput}}">
+		<view class="iconfont icon-message replyicon"></view>
+		<view class="replytext">Reply</view>
+	</button>
+	<view class="replybottom" wx:if="{{showInput}}">
+		<input class='replyInput'  focus="auto" placeholder="Enter reply"  bindinput='changereplyVal' bindblur="onHideInput" confirm-type="done"/>
+		<button class="sendbutton" type="primary" bindtap="addReply">Send</button>
+	</view>
+</view>
+

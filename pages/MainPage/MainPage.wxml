@@ -1,0 +1,75 @@
+<!--pages/MainPage/MainPage.wxml-->
+<view>
+	<!-- 搜索栏 -->
+	<view class="page__bd">
+		<mp-searchbar throttle="200ms" bindclear="clear" bindselectresult="selectResult" search="{{search}}" placeholder="Search..." value="{{inputVal}}" cancel="{{false}}"></mp-searchbar>
+	</view>
+	<view>
+		<Select prop-array='{{selectArray}}' bind:myget='getDate'></Select>
+		<!-- <picker bindchange="bindSelectChange" value="{{selectIndex}}" range="{{select}}">
+			<view class="weui-select weui-select_in-select-after">{{select[selectIndex]}}</view>
+		</picker> -->
+	</view>
+		
+	<!-- 列表 -->
+	<block wx:if="{{inputShowed==false}}">
+    <mp-cells wx:for="{{teamInfo}}" bindtap="navigate" wx:key="{{item._id}}" data-index="{{item._id}}" ext-class="onemessage">
+      <view>
+        <mp-cell link class="cell">
+          <view class="left">
+						<view class="ProjectName">
+							{{item.projectName}}
+						</view>
+						<view class="DDL">
+							Deadline {{item.deadline}}
+						</view>
+						<view class="Tag">
+							Tags: {{item.tags}}
+						</view>
+					</view>
+          <view slot="footer" wx:if="{{item.numOfTM==-1}}">
+						<view class=".numOfTM">{{item.currentNum}}/∞</view>
+            <!-- <mp-badge style="margin-right:10rpx;" content="{{item.currentNum}}/∞" /> -->
+          </view>
+					<view slot="footer" wx:else>
+						<view class=".numOfTM">{{item.currentNum}}/{{item.numOfTM}}</view>
+            <!-- <mp-badge style="margin-right:10rpx;" content="{{item.currentNum}}/{{item.numOfTM}}" /> -->
+          </view>
+        </mp-cell>
+      </view>
+    </mp-cells>
+  </block>
+	<block wx:if="{{inputShowed==true}}">
+		<mp-cells wx:for="{{searchTeamInfo}}" bindtap="navigate" wx:key="{{item._id}}" data-index="{{item._id}}" ext-class="onemessage">
+      <view>
+        <mp-cell link class="cell">
+          <view class="left">
+						<view class="ProjectName">
+							{{item.projectName}}
+						</view>
+						<view class="DDL">
+							Deadline {{item.deadline}}
+						</view>
+						<view class="Tag">
+							Tags: {{item.tags}}
+						</view>
+					</view>
+          <view slot="footer" wx:if="{{item.numOfTM==-1}}">
+						<view class=".numOfTM">{{item.currentNum}}/∞</view>
+            <!-- <mp-badge style="margin-right:10rpx;" content="{{item.currentNum}}/∞" /> -->
+          </view>
+					<view slot="footer" wx:else>
+						<view class=".numOfTM">{{item.currentNum}}/{{item.numOfTM}}</view>
+            <!-- <mp-badge style="margin-right:10rpx;" content="{{item.currentNum}}/{{item.numOfTM}}" /> -->
+          </view>
+        </mp-cell>
+      </view>
+    </mp-cells>
+	</block>
+	<view class="loading" hidden="{{!SearchLoading}}">Loading More...</view>  
+	<view class="loading" hidden="{{!SearchLoadingComplete}}">No More...</view>
+</view>
+
+
+
+

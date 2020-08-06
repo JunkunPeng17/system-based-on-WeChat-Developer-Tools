@@ -1,0 +1,29 @@
+<!--pages/messagebox/messagebox.wxml-->
+<view class="messagebox-container">
+  <view class="boxtitle">Notifications</view>
+  <!-- 分割线 -->
+  <view class="divLine"></view>
+  <!-- 有消息 -->
+  <block wx:if="{{messageNum == 0}}">
+    <view style="font-size: 40rpx;color: #888888; ">No Notifications</view>
+  </block>
+  <!-- 无消息 -->
+  <block wx:elif="{{messageNum >0}}">
+    <mp-cells wx:for="{{messages}}" wx:for-index="index" wx:for-item="message" wx:key="i" ext-class="onemessage">
+    <mp-slideview buttons="{{slideButtons}}" bindbuttontap="slideButtonTap" data-msgid = "{{message._id}}">
+        <mp-cell url="" bindtap="updateToRead" data-status = "{{message.toRead}}" data-msgid = "{{message._id}}" data-databasename = "Notifications" hover>
+          <view style="font-size: 37rpx">{{message.title}} ({{message.projectName}})</view>
+          <view style="font-size: 30rpx;color: #4A4A4A; width: 500rpx; margin-top: 5rpx; margin-bottom: 25rpx; ">{{message.content}}</view>
+          <view style="font-size: 23rpx;color: #888888; ">{{message.createTime}}</view>
+          <!-- <view style="font-size: 13px;color: #888888; ">{{message.applytime}}</view> -->
+          <view slot="footer">
+            <block wx:if="{{message.toRead}}">
+            <mp-badge style="margin-right:10rpx;" content="New" />
+            </block>
+          </view>
+                 
+        </mp-cell>
+          </mp-slideview>
+    </mp-cells>
+  </block>
+</view>

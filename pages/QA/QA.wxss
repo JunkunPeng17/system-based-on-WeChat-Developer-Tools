@@ -1,0 +1,67 @@
+.msg-box{
+	padding:50rpx;
+}
+.send-box{
+	display:flex;
+	margin-left:10rpx;
+}
+.input{
+	width:70%;
+	border:1rpx solid #ccc;
+	padding:5rpx;
+	border-radius:5rpx;
+}
+.msg-inform{
+	
+	display:block;
+	margin:10rpx 0 0 0;
+	color:#339999;
+}
+.place-input{
+	color:#ff6600;
+}
+.list-view{
+	margin:20rpx 0 0 0;
+}
+.item{
+
+	margin: 10rpx 0 0 0;
+  /* border: 5rpx solid rgb(0, 0, 0); */
+  flex-direction: column;
+  display: flex;
+  /* box-shadow: inset 10px 15px 20px gainsboro; */
+	height: auto;
+}
+.info{
+	flex-direction:row;
+	display: flex;
+}
+.profile{
+	margin-top: 20rpx;
+	margin-left: 20rpx;
+	border-radius: 50%;
+	width:70rpx;
+	height:70rpx;
+	overflow:hidden;
+}
+.nickname{
+	margin-top: 25rpx;
+	margin-left: 20rpx;
+	font-size:30rpx;
+	overflow:hidden;
+}
+.text1{
+	margin-top: 15rpx;
+	margin-left: 20rpx;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  white-space: normal !important;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+	font-size: 33rpx;
+}

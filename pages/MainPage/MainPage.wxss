@@ -1,0 +1,143 @@
+/* .team {
+  margin: 10rpx 20rpx 0 20rpx;
+  border: 5rpx solid rgb(0, 0, 0);
+  background-color: #fff;
+  flex-direction: column;
+  display: flex;
+  box-shadow: inset 10px 15px 20px gainsboro;
+	height: 220rpx;
+} */
+/* .searchFunc{
+	display: flex;
+	flex-direction:row;
+	justify-content:baseline;
+}
+
+{
+	display:flex;
+
+	flex-basis:600rpx;
+} */
+.login{
+	margin-bottom:30rpx;
+}
+/* mp-searchbar{
+
+	justify-content: right;
+
+} */
+.weui-select{
+	line-height: 70rpx;
+}
+
+
+.left{
+	/* position:relative; */
+	/* margin:0 200rpx 0 0; */
+	flex-direction:column;
+}
+/* .TeamName {
+	position:absolute;
+	top:5rpx;
+	left:-10rpx;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  white-space: normal !important;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+	font-size: 33rpx;
+} */
+.ProjectName {
+	/* position:absolute; */
+	/* margin-top:-60rpx; */
+
+  margin-top:-30rpx;
+	margin-left:-10rpx;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  white-space: normal !important;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+	font-size: 55rpx;
+	
+}
+
+.Tag{
+
+	/* position:absolute; */
+	margin-bottom: -20rpx;
+	margin-left:-10rpx;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  white-space: normal !important;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+	font-size: 22rpx;
+	color:#888888;
+}
+/* .right{
+	margin:0 0 0 450rpx;
+	position:relative;
+	top:0;
+	
+	flex-direction:column;
+} */
+.DDL{
+
+	/* position:absolute; */
+
+	margin-left:-10rpx;
+	text-align: left;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  white-space: normal !important;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+	font-size: 22rpx;
+	color:#888888;
+}
+.numOfTM{
+	color:#000;
+}
+
+/* .row {
+  flex-direction: row;
+}
+
+.TeamTag {
+  float: left;
+}
+
+.NumandDDL {
+  float: right;
+} */
+
+.loading {
+  padding: 10rpx;
+  font-size: 26rpx;
+  color: #666;
+  text-align: center;
+}
+.onemessage{
+  margin: 20rpx;
+}
+

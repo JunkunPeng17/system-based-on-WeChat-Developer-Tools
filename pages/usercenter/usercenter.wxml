@@ -1,0 +1,45 @@
+<!--pages/usercenter/usercenter.wxml-->
+<view class="usercenter-container">
+<!-- 未登录的状态 -->
+<block wx:if="{{!hasUserInfo && canIUse}}">
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" type="primary"> 未登陆 </button>
+</block>
+<!-- 已登录的状态 -->
+<block wx:elif="{{hasUserInfo && canIUse}}" class="userinfo">
+  <image class="userinfo-avatar" src="{{wxUserInfo.avatarUrl}}" mode="cover" style="border-radius: 50%; width: 128rpx; height: 128rpx;margin: 20rpx;"></image>
+  <!-- 个人信息 -->
+  <mp-cells  link ext-class="profile-block">
+    <mp-cell ext-class="userinfo-title" value="PROFILE"  url="/pages/edituserinfo/edituserinfo" link hover></mp-cell>
+    <view style=" color:rgb(104, 104, 104)">
+    <mp-cell value="Nickname" footer="{{nickname}}"></mp-cell>
+    <mp-cell value="Gender" footer="{{gender}}"></mp-cell>
+    <mp-cell value="Grade" footer="{{grade}}"></mp-cell>
+    <mp-cell value="Major" footer="{{major}}"></mp-cell>
+    <mp-cell value="WeChat ID" footer="{{address}}"></mp-cell>
+    </view>
+  </mp-cells>
+
+  <!-- 消息通知 -->
+    <mp-cells  ext-class="profile-block">
+  <mp-cell link url="/pages/notice/notice" hover ext-class="">
+      <view style="display: inline-block; vertical-align: middle">Notifications</view>
+      <mp-badge content="{{toReadMsgNot}}" style="margin-left: 5px;"/>
+  </mp-cell>
+  <!--申请书 -->
+    <mp-cell link url="/pages/appexpel/appexpel" hover ext-class="">
+      <view style="display: inline-block; vertical-align: middle">Applications |  Expelling</view>
+    <mp-badge content="{{toReadMsgApp}}" style="margin-left: 5px;"/>
+  </mp-cell>
+    </mp-cells>
+    
+  <!-- 我的 -->
+  <mp-cells ext-class="garage-block">
+    <mp-cell link hover value="History projects (unavailable)">
+      <image slot="title" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </mp-cell>
+    <mp-cell link hover value="Comments (unavailable)">
+      <image slot="title" src="{{icon}}" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </mp-cell>
+  </mp-cells>
+</block>
+</view>
