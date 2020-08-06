@@ -24,7 +24,7 @@ Then we simply introduce files placed in the project’s root directory:
  
 Some related pictures of the system are shown below:  
 1.The Team lobby page  
-![组队大厅](https://github.com/JunkunPeng17/system-based-on-WeChat-Developer-Tools/blob/master/mini/Snipaste_2020-08-06_09-40-14.png)  
+<img src="https://github.com/JunkunPeng17/system-based-on-WeChat-Developer-Tools/blob/master/mini/Snipaste_2020-08-06_09-40-14.png" width="200" height="200" alt="组队大厅"/>
 2.Create team page  
 ![创建队伍](https://github.com/JunkunPeng17/system-based-on-WeChat-Developer-Tools/blob/master/mini/Snipaste_2020-08-06_09-40-04.png)  
 3.Team details display  
