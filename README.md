@@ -24,10 +24,11 @@ Then we simply introduce files placed in the project’s root directory:
  
 Some related pictures of the system are shown below:  
 1.The Team lobby page  
-<img src="https://github.com/JunkunPeng17/system-based-on-WeChat-Developer-Tools/blob/master/mini/Snipaste_2020-08-06_09-40-14.png" width="300" height="400" alt="组队大厅"/>
+<img src="https://github.com/JunkunPeng17/system-based-on-WeChat-Developer-Tools/blob/master/mini/Snipaste_2020-08-06_09-40-14.png" width="400" height="400" alt="组队大厅"/>  
 2.Create team page  
-![创建队伍](https://github.com/JunkunPeng17/system-based-on-WeChat-Developer-Tools/blob/master/mini/Snipaste_2020-08-06_09-40-04.png)  
-3.Team details display  
-![队伍展示](https://github.com/JunkunPeng17/system-based-on-WeChat-Developer-Tools/blob/master/mini/Snipaste_2020-08-06_09-41-02.png)  
+<img src="https://github.com/JunkunPeng17/system-based-on-WeChat-Developer-Tools/blob/master/mini/Snipaste_2020-08-06_09-40-04.png" width="400" height="400" alt="创建队伍"/>   
+3.Team details display 
+<img src="https://github.com/JunkunPeng17/system-based-on-WeChat-Developer-Tools/blob/master/mini/Snipaste_2020-08-06_09-41-02.png" width="400" height="400" alt="队伍展示"/>  
 4. Personal Profile  
-![队伍展示](https://github.com/JunkunPeng17/system-based-on-WeChat-Developer-Tools/blob/master/mini/Snipaste_2020-08-06_09-39-42.png)  
+<img src="https://github.com/JunkunPeng17/system-based-on-WeChat-Developer-Tools/blob/master/mini/Snipaste_2020-08-06_09-39-42.png" width="400" height="400" alt="个人资料"/>  
+
