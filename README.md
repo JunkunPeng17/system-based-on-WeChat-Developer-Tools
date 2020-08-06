@@ -1,6 +1,6 @@
 # system-based-on-WeChat-Developer-Tools
 
-Our team developed our program based on WeChat DevTool. The inspector should use WeChat  
+Our team developed our program based on  __WeChat DevTool__. The inspector should use WeChat  
 DevTool to open the project for accessing code files. This develop tool help developers  
 develop and debug WeChat Mini Programs more simply and efficiently.  
 The mini-program is composed of four code files:  
@@ -21,3 +21,13 @@ Then we simply introduce files placed in the project’s root directory:
 • images: All images of the project.  
 • compenets: Custom components used in the project.  
 • cloud: WeChat cloud functions.   
+ 
+Some related pictures of the system are shown below:  
+1.The Team lobby page  
+![组队大厅](https://github.com/JunkunPeng17/system-based-on-WeChat-Developer-Tools/blob/master/mini/Snipaste_2020-08-06_09-40-14.png)  
+2.Create team page  
+![创建队伍](https://github.com/JunkunPeng17/system-based-on-WeChat-Developer-Tools/blob/master/mini/Snipaste_2020-08-06_09-40-04.png)  
+3.Team details display  
+![队伍展示](https://github.com/JunkunPeng17/system-based-on-WeChat-Developer-Tools/blob/master/mini/Snipaste_2020-08-06_09-41-02.png)  
+4. Personal Profile  
+![队伍展示](https://github.com/JunkunPeng17/system-based-on-WeChat-Developer-Tools/blob/master/mini/Snipaste_2020-08-06_09-39-42.png)  
