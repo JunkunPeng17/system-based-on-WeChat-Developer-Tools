@@ -1,6 +1,9 @@
 # system-based-on-WeChat-Developer-Tools
+## How to use?
+Due to the large number of files, the author directly uploads the packaged zip file for users to use. Users only need to download and unzip saveourgroupv0.3success.zip and import it into the WeChat developer tool for use.  
 
-Our team developed our program based on  __WeChat DevTool__. The inspector should use WeChat  
+## Description：  
+Our team developed the program based on  __WeChat DevTool__. The inspector should use WeChat  
 DevTool to open the project for accessing code files. This develop tool help developers  
 develop and debug WeChat Mini Programs more simply and efficiently.  
 The mini-program is composed of four code files:  
